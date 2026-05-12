@@ -1,0 +1,356 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
+}
+
+.wifi-error{
+    width: 100%;
+    font-size: 1.3vw;
+    padding: 0.3vw;
+    text-align: center;
+    background-color: red;
+    color: white;
+    font-weight: 400;
+    display: none;
+}
+
+header{
+    width: 100%;
+    height: 4.34vw;
+    background-color: #F5F5F6;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 8.68vw;
+}
+
+.bank-logo{
+    width: 7.73vw;
+}
+
+nav{
+    font-size: 0.95vw;
+    font-weight: 600;
+    display: flex;
+    gap: 2.17vw;
+    color: #959BA4;
+}
+
+.bank{
+    color: black;
+}
+
+.login{
+    width: 6.08vw;
+    height: 2.86vw;
+    font-size: 0.95vw;
+    font-weight: 600;
+    border: none;
+    border-radius: 0.43vw;
+    background-color: white;
+}
+
+main{
+    width: 100%;
+    margin-top: 5.9vw;
+    padding: 0 8.68vw;
+}
+
+h1{
+    font-size: 3.125vw;
+    margin-bottom: 2.86vw;
+}
+
+section{
+    display: flex;
+    gap: 3.47vw;
+}
+
+.cnv-box{
+    width: 22.48vw;
+}
+
+.first-text{
+    font-size: 1.04vw;
+    color: #9F9F9F;
+    margin-bottom: 0.43vw;
+}
+
+.val-box1{
+    display: flex;
+    margin-bottom: 1.73vw;
+}
+
+.btn{
+    width: 25%;
+    height: 2.6vw;
+    font-size: 1.04vw;
+    border: 1px solid #E5E5E5;
+    background: white;
+    color: #9F9F9F;
+    cursor: pointer;
+}
+
+.active-btn1,
+.active-btn2,
+.active-btn3{
+    background-color: #833AE0;
+    color: white;
+}
+
+.input-box{
+    border: 1px solid #E5E5E5;
+    height: 8.85vw;
+    padding: 0.87vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.input1,
+.input2{
+    width: 100%;
+    border: none;
+    outline: none;
+    font-size: 3.125vw;
+    font-weight: bold;
+}
+
+.convert-text-1,
+.convert-text-2{
+    font-size: 1.04vw;
+    color: #9F9F9F;
+}
+
+.bank-box{
+    width: 29.51vw;
+}
+
+.bank-name-box{
+    width: 22.48vw;
+    display: flex;
+    margin-bottom: 1.73vw;
+}
+
+.buy-box,
+.sell-box{
+    width: 100%;
+    height: 8.85vw;
+    display: flex;
+    align-items: center;
+    border: 1px solid #E5E5E5;
+}
+
+.buy-box{
+    margin-bottom: 2.95vw;
+}
+
+.buy-text,
+.sell-text{
+    width: 7.12vw;
+    height: 100%;
+    background-color: #833AE0;
+    font-size: 1.73vw;
+    font-weight: 600;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.buy-amount,
+.sell-amount{
+    width: 22.48vw;
+    text-align: center;
+    font-size: 3.125vw;
+    font-weight: bold;
+}
+
+
+@media (max-width: 990px){
+
+    .wifi-error{
+        font-size: 1.6vw;
+        padding: 0.5vw;
+    }
+
+    header{
+    height: 7.34vw;
+}
+
+.bank-logo{
+    width: 10.73vw;
+}
+
+nav{
+    font-size: 1.5vw;
+    gap: 1.3vw;
+}
+
+.login{
+    width: 9.08vw;
+    height: 4.86vw;
+    font-size: 1.55vw;
+}
+
+h1{
+    font-size: 4.125vw;
+    margin-bottom: 3.86vw;
+}
+
+
+    section{
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    .cnv-box{
+        width: 47%;
+    }
+
+    .bank-box{
+        width: 100%;
+    }
+
+    .bank-name-box{
+        width: 100%;
+    }
+
+    .input-box{
+        height: 11.85vw;
+    }
+
+    .input1,
+    .input2{
+        font-size: 5vw;
+    }
+
+    .buy-amount,
+    .sell-amount{
+        font-size: 5vw;
+    }
+
+    .first-text{
+    font-size: 1.5vw;
+    }
+
+    .btn{
+        height: 4vw;
+        font-size: 1.8vw;
+    }
+
+    .convert-text-1,
+    .convert-text-2{
+        font-size: 1.3vw;
+    }
+
+    .buy-box,
+    .sell-box{
+        height: 9.85vw;
+        margin-bottom: 1.95vw;
+    }
+
+    .buy-text,
+    .sell-text{
+        width: 20%;
+        font-size: 3.5vw;
+    }
+
+    .buy-amount,
+    .sell-amount{
+        width: 80%;
+    }
+
+}
+
+@media (max-width: 600px){
+
+    .wifi-error{
+        font-size: 1.9vw;
+        padding: 0.9vw;
+    }
+
+    header{
+    height: 12.34vw;
+    padding: 0 8.68vw;
+}
+
+.bank-logo{
+    width: 23.73vw;
+}
+
+nav{
+    font-size: 0.95vw;
+    display: none;
+}
+
+.login{
+    width: 15.08vw;
+    height: 6.86vw;
+    font-size: 2.95vw;
+    border-radius: 1.43vw;
+}
+
+    h1{
+        font-size: 7vw;
+        text-align: center;
+    }
+
+    section{
+        flex-direction: column;
+        gap: 6vw;
+    }
+
+    .cnv-box,
+    .bank-box{
+        width: 100%;
+    }
+
+    .input-box{
+        gap: 3vw;
+        height: auto;
+        padding: 1.87vw;
+    }
+
+    .input1,
+    .input2{
+        font-size: 7vw;
+    }
+
+    .first-text{
+    font-size: 3vw;
+    margin-bottom: 1.23vw;
+    }
+
+    .btn{
+        height: 8vw;
+        font-size: 3vw;
+    }
+
+    .convert-text-1,
+    .convert-text-2{
+        font-size: 2.04vw;
+    }
+
+    .buy-box,
+    .sell-box{
+        height: 12.85vw;
+        margin-bottom: 1.95vw;
+    }
+
+    .buy-text,
+    .sell-text{
+        width: 25%;
+        font-size: 4.5vw;
+    }
+
+    .buy-amount,
+    .sell-amount{
+        width: 75%;
+        font-size: 7vw;
+    }
+}

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>I.Mehemmed | Currency Converter</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="wifi-error">Şəbəkədə xəta var. Məlumatlar localStorage-dən götürülür!</div>
+    <header>
+        <img class="bank-logo" src="bank_logo.svg" alt="bank-logo">
+        <nav>
+            <div class="bank">BANK</div>
+            <div>BİZNES</div>
+            <div>FƏRDİ</div>
+            <div>KART</div>
+            <div>ONLİNE</div>
+            <div>MÜRACİƏT</div>
+            <div>HAQQIMIZDA</div>
+        </nav>
+        <button class="login">LOGİN</button>
+    </header>
+    <main>
+        <h1>Valyuta dəyişdir</h1>
+        <section>
+            <div class="cnv-box">
+                <p class="first-text">Daxil et/Dəyiş</p>
+                <div class="val-box1">
+                    <button class="active-btn1 btn cnv-btn1">RUB</button>
+                    <button class="btn cnv-btn1">USD</button>
+                    <button class="btn cnv-btn1">EUR</button>
+                    <button class="btn cnv-btn1">GBP</button>
+                </div>
+                <div class="input-box">
+                    <input class="input1" type="text" value="5000">
+                    <p class="convert-text-1">1 RUB = 0.0135 USD</p>
+                </div>
+            </div>
+
+            <div class="cnv-box">
+                <p class="first-text">Daxil et/Dəyiş</p>
+                <div class="val-box1">
+                    <button class="btn cnv-btn2">RUB</button>
+                    <button class="active-btn2 btn cnv-btn2">USD</button>
+                    <button class="btn cnv-btn2">EUR</button>
+                    <button class="btn cnv-btn2">GBP</button>
+                </div>
+                <div class="input-box">
+                    <input class="input2" type="text" value="67.6685">
+                    <p class="convert-text-2">1 USD = 73.8896 RUB</p>
+                </div>
+            </div>
+
+            <div class="bank-box">
+                <p class="first-text">Hansı bank?</p>
+                <div class="bank-name-box">
+                    <button class="btn bank-btn">ABC</button>
+                    <button class="active-btn3 btn bank-btn">NEW</button>
+                    <button class="btn bank-btn">AME</button>
+                    <button class="btn bank-btn">RED</button>
+                </div>
+                <div class="buy-box">
+                    <p class="buy-text">BUY</p>
+                    <p class="buy-amount">66.15</p>
+                </div>
+                <div class="sell-box">
+                    <p class="sell-text">SELL</p>
+                    <p class="sell-amount">67.83</p>
+                </div>
+            </div>
+        </section>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
