@@ -145,6 +145,8 @@ function exchangeFromInput1(){
     fetch(`${apiUrl}${key}&from=${fromVal}&to=${toVal}&amount=${input1.value}`)
     .then(res => res.json())
     .then(data => {
+        wifiError.style.display = "none";
+
         let val = Number(data.value);
         input2.value = val.toFixed(4);
         currentRate = val / (Number(input1.value) || 1);
@@ -157,8 +159,10 @@ function exchangeFromInput1(){
         updateBank();
     })
     .catch(() => {
+        wifiError.style.display = "block";
+
         let savedRate = localStorage.getItem(`${fromVal}_${toVal}`);
-        if(savedRate){
+        if(savedRate && !isNaN(savedRate)){
             currentRate = Number(savedRate);
 
             input2.value = (Number(input1.value) * currentRate).toFixed(4);
@@ -166,6 +170,14 @@ function exchangeFromInput1(){
             convertText2.textContent = `1 ${toVal} = ${(1/currentRate).toFixed(4)} ${fromVal}`;
 
             updateBank();
+        }
+
+        else {
+            input2.value = "Data tapılmadı";
+            convertText1.textContent = "localStorage-də məlumat yoxdur";
+            convertText2.textContent = "localStorage-də məlumat yoxdur";
+            buyAmount.textContent = "Data tapılmadı";
+            sellAmount.textContent = "Data tapılmadı";
         }
     })
 }
@@ -185,6 +197,8 @@ function exchangeFromInput2(){
     fetch(`${apiUrl}${key}&from=${toVal}&to=${fromVal}&amount=${input2.value}`)
     .then(res => res.json())
     .then(data => {
+        wifiError.style.display = "none";
+
         let val = Number(data.value);
         input1.value = val.toFixed(4);
         let inverseRate = val / (Number(input2.value) || 1);
@@ -198,9 +212,11 @@ function exchangeFromInput2(){
         updateBank();
     })
     .catch(() => {
+        wifiError.style.display = "block";
+
         let savedRate = localStorage.getItem(`${fromVal}_${toVal}`);
 
-        if(savedRate){
+        if(savedRate && !isNaN(savedRate)){
             currentRate = Number(savedRate);
 
             input1.value = (Number(input2.value) / currentRate).toFixed(4);
@@ -208,6 +224,14 @@ function exchangeFromInput2(){
             convertText2.textContent = `1 ${toVal} = ${currentRate.toFixed(4)} ${fromVal}`;
 
             updateBank();
+        }
+
+        else {
+            input1.value = "Data tapılmadı";
+            convertText1.textContent = "localStorage-də məlumat yoxdur";
+            convertText2.textContent = "localStorage-də məlumat yoxdur";
+            buyAmount.textContent = "Data tapılmadı";
+            sellAmount.textContent = "Data tapılmadı";
         }
     })
 }
@@ -235,12 +259,22 @@ function updateBank(){
         let resultValue = Number(input2.value || 0);
         buyAmount.textContent = (resultValue * sellRate).toFixed(4);
         sellAmount.textContent = (resultValue * buyRate).toFixed(4);
+
+        if(isNaN(resultValue)){
+            buyAmount.textContent = "Data tapılmadı"
+            sellAmount.textContent = "Data tapılmadı"
+        }
     }
 
     else{
         let resultValue = Number(input1.value || 0);
         buyAmount.textContent = (resultValue * sellRate).toFixed(4);
         sellAmount.textContent = (resultValue * buyRate).toFixed(4);
+
+        if(isNaN(resultValue)){
+            buyAmount.textContent = "Data tapılmadı"
+            sellAmount.textContent = "Data tapılmadı"
+        }
     }
 }
 
