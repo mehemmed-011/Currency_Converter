@@ -3,17 +3,17 @@ const axios = require('axios');
 const cors = require('cors');
 
 const app = express();
-const PORT = 3000;
 
-// Brauzerinizdən gələn sorğuları bloklamaması üçün CORS-u aktiv edirik
+// 1. PORT MƏSƏLƏSİ: Railway sənə PORT-u özü verir. 
+// Əgər 3000-də qalsan, Railway onu bloklayacaq.
+const PORT = process.env.PORT || 3000;
+
 app.use(cors());
 
 app.get('/convert', async (req, res) => {
     try {
-        // Frontend-dən gələn parametrləri alırıq
         const { from, to, amount, api_key } = req.query;
 
-        // Sorğunu sizin əvəzinizdən server göndərir (CORS burada mane olmur)
         const response = await axios.get(`https://api.currencybeacon.com/v1/convert`, {
             params: {
                 api_key: api_key,
@@ -23,14 +23,15 @@ app.get('/convert', async (req, res) => {
             }
         });
 
-        // API-dan gələn cavabı birbaşa frontend-ə göndəririk
         res.json(response.data);
     } catch (error) {
-        console.error("Xəta baş verdi:", error.message);
+        // Loglarda xətanı daha aydın görmək üçün:
+        console.error("API Xətası:", error.response ? error.response.data : error.message);
         res.status(500).json({ error: "Server xətası baş verdi" });
     }
 });
 
-app.listen(PORT, () => {
-    console.log(`Backend server http://localhost:${PORT} ünvanında hazırdır!`);
+// 2. HOST MƏSƏLƏSİ: '0.0.0.0' əlavə etmək serverin kənara açılmasını təmin edir
+app.listen(PORT, "0.0.0.0", () => {
+    console.log(`Backend server ${PORT} portunda hazırdır!`);
 });
