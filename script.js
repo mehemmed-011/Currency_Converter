@@ -1,7 +1,6 @@
 let key = "8ry8Wwjc2mTf1x4toRu3WO9LEMK1Mjrq";
 // let apiUrl = "https://api.currencybeacon.com/v1/convert?api_key=";
 // let apiUrl = "http://localhost:3000/convert?api_key=";
-// Sizin Railway-dən aldığınız real linki bura yazın:
 let apiUrl = "https://currencyconverter-production-2469.up.railway.app/convert?api_key=";
 
 let convertBtn1 = document.querySelectorAll(".cnv-btn1");
